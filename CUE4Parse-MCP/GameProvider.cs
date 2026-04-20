@@ -77,8 +77,8 @@ public class GameProvider
             }
         }
 
-        _provider = new DefaultFileProvider(gameDir, SearchOption.AllDirectories, true,
-            new VersionContainer(game));
+        _provider = new DefaultFileProvider(gameDir, SearchOption.AllDirectories,
+            new VersionContainer(game), StringComparer.OrdinalIgnoreCase);
 
         _provider.Initialize();
         Log.Information("Initialized: {Count} files indexed", _provider.Files.Count);
